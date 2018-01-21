@@ -20,9 +20,8 @@ std::deque<int> mergeSort(const std::deque<int> &v) {
         std::deque<std::deque<int>> tmp; // this will be the new set of chunks at the end of this iteration
 
         std::size_t i = 0;
-        while (i < chunks.size()) {
+        for ( ; i < chunks.size(); i += 2) {
             tmp.push_back(mergeChunks(chunks[i], chunks[i + 1]));
-            i += 2;
         }
 
         // if there is an odd number of elements, then add the one that was missed in the for loop to `tmp`
