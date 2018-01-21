@@ -2,6 +2,11 @@
 #include <deque> // using deque for `pop_front`
 #include <random>
 
+std::vector<int> &append(std::vector<int> &v1, const std::vector<int> &v2) {
+    v1.insert(v1.end(), v2.begin(), v2.end());
+    return v1;
+}
+
 std::deque<int> mergeChunks(std::deque<int> &a, std::deque<int> &b);
 
 std::deque<int> mergeSort(const std::deque<int> &v) {
@@ -48,43 +53,7 @@ std::deque<int> mergeChunks(std::deque<int> &a, std::deque<int> &b) {
 
     // if all the elemnts of one chunk have been added to `ret` then add the remaining 
     // elements of the other chunk to the end of `ret` (knowing that they're sorted)
-    ret.insert(ret.end(), b.begin(), b.end());
-    ret.insert(ret.end(), a.begin(), a.end());
-
-    return ret;
-}
-
-int randomNum(int min, int max) {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<int> dist(min, max);
-    return dist(mt);
-}
-
-std::deque<int> randomList(int len, int min, int max) {
-    std::deque<int> ret;
-    for (int i = 0; i < len; ++i) {
-        ret.push_back(randomNum(min, max));
-    }
-    return ret;
-}
-
-int main() {
-    for (int i = 0; i < 5; ++i) {
-        auto list = randomList(8, 1, 100);
-        for (const auto &a : list) {
-            std::cout << a << " ";
-        }
-
-        std::cout << '\n';
-
-        list = mergeSort(list);
-        for (const auto &a : list) {
-            std::cout << a << " ";
-        }
-
-        std::cout << "\n\n";
-    }
+    return append(append(ret, b), a);
 }
 
 int main() {
