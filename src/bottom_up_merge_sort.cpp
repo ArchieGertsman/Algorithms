@@ -2,9 +2,9 @@
 #include <deque> // using deque for `pop_front`
 #include <random>
 
-std::vector<int> &append(std::vector<int> &v1, const std::vector<int> &v2) {
-    v1.insert(v1.end(), v2.begin(), v2.end());
-    return v1;
+std::deque<int> &append(std::deque<int> &d1, const std::deque<int> &d2) {
+    d1.insert(d1.end(), d2.begin(), d2.end());
+    return d1;
 }
 
 std::deque<int> mergeChunks(std::deque<int> &a, std::deque<int> &b);
