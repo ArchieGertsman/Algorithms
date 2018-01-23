@@ -14,7 +14,7 @@ int main() {
     std::string meme;
     std::getline(std::cin, meme);
     std::transform(meme.begin(), meme.end(), meme.begin(), [&](char &c) { 
-        return randBinDig() == 0 ? c : std::toupper(c);    
+        return (randBinDig() == 0 ? std::tolower : std::toupper)(c);    
     });
     std::cout << meme << '\n';
 }
