@@ -56,5 +56,5 @@ std::deque<int> mergeChunks(std::deque<int> &a, std::deque<int> &b) {
 }
 
 int main() {
-    auto sorted_list = mergeSort({ 15, 35, 91, 11, 27, 71, 65, 47 });
+    const auto &sorted_list = mergeSort({ 15, 35, 91, 11, 27, 71, 65, 47 });
 }
