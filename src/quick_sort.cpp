@@ -24,5 +24,5 @@ std::vector<int> quickSort(const std::vector<int> &v) {
 }
 
 int main() {
-    auto sorted_list = quickSort({ 15, 35, 91, 11, 27, 71, 65, 47 });
+    const auto &sorted_list = quickSort({ 15, 35, 91, 11, 27, 71, 65, 47 });
 }
