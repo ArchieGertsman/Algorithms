@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <cmath>
 
+// original problem: https://open.kattis.com/problems/10kindsofpeople
+
 struct Point {
     int x, y;
     friend bool operator==(const Point &p1, const Point &p2);
