@@ -70,4 +70,3 @@ int main() {
 
 	std::cout << chemify("obtain money") << '\n'; // output: OBTaIn MoNeY
 }
-
